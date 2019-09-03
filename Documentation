@@ -1,0 +1,37 @@
+# openWeather
+Objective:
+This document of Test Execution report is to explain the process of running the test sceanrios covered under given assessment.
+
+Process:
+1. Folder Structure:
+In the following assessment, I have implemented the scenarios using BDD Framework with POM.xml to have all the required configurations.
+Page object modal is also followed for this assessment which is present in main >> java >> page objects >> openWeatherPage.java
+Using BDD framework,I have scripted all the scenarios in a feature file under Test >> resources >> features >> openWeather.feature.
+The respective functionalities of the features files are scripted in stepDefination file under src >> test >> java >> setpdefinition >> openWeather.java
+The sceanrios can be executed using runner file which is present in src >> test >> java >> runner >> TestRunner.java.
+Those scenarios can be executed using tags which we have mentioned above sceanrios in feature file.
+
+2. Execution of sceanrios: 
+The scenarios in the feature file from can be executed using TestRunner.java files. Below is the execution details to run the scripts
+Under the "Background" keyword user has given the main url of the website. Before every scenario is executed, the main URL mentioned in "background" will be executed and it will open the openWeather website using the link 
+@scenario1
+Scenario Outline: To check working of the openWeather page : 
+For this scenario user has opened the website using link and when user is on home page.
+user verified that home page should contain few labels (like openWeather link,Weather in your city     Search box ,Sign in and Sign up button) are enabled and working as expected. 
+@scenario2
+Scenario: To check the error message for wrong city name : 
+For the execution of this negative scenario , user will be navigated to the website link from URL link under "background" and when user is on home page of the website. In the "Weather in your city" Search box. a invalid keyword like "invalid" is entered.[Puno or any invalid city name can be used for testing purpose]
+when user clicks on search button, it will navigates user to other page  where user got "not found" message will be displayed.
+
+ @scenario3
+  Scenario: To check the information is displayed when valid city name is entered: 
+For the execution of this positive scenario, user will be navigated to the website link from URL link under "background" and when user is on home page of the website. In the "Weather in your city" Search box. a valid city name like "Pune" is entered.[Delhi or any valid city name can be used for testing purpose] when user clicks on search button, it will navigates user to other page  where the weather details of searched city is displayed.
+
+@scenario4
+  Scenario: To check the functioning of API: 
+For execution of this scenario, user will be navigated to the website link from URL link under "background" and when user is on home page of the website. From home page, user clicks on the API link and user will be navigating to API weather page.
+On the API weather page user is getting message for sign up or monthly subscription under this web page.
+As explained above, those are execution details for each scenarios.
+Additional Note: 
+If I had more time, I would have used the dynamic values in our code to make our scenarios more robust and can be used in our code more extensively and efficiently. I would also try to implement and integrate my scenarios with jenkins pipeline. 
+I have uploaded my work in public code repository which was hosted on Github.
